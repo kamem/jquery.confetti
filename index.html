@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=0">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="stylesheet" href="css/import.css">
+<meta name="keywords" content="sass,compass">
+<meta name="description" content="sass,compass test">
+<script src="js/jquery.js"></script>
+<script src="js/jquery.confetti.js"></script>
+<script>
+$(function(){
+	$('html').click(function(e){
+		$('[class*=confetti]').remove();
+		$('html').confetti({
+			x: e.pageX,
+			y: e.pageY,
+			complate:function(){
+				alert('complate');
+			}
+		});
+	});
+});
+</script>
+<style>
+html,
+body {
+	height: 100%;
+	overflow: hidden;
+}
+
+[class*=confetti] {
+	position: absolute;
+	height: 6px;
+	width: 6px;
+	opacity: 0.4;
+	-webkit-animation-iteration-count: infinite;
+}
+
+[class*=confetti]:nth-child(odd) {
+	-webkit-animation-duration: 0.4s;
+	-webkit-animation-name: confetti1;
+}
+[class*=confetti]:nth-child(even) {
+	-webkit-animation-duration: 0.6s;
+	-webkit-animation-name: confetti2;
+}
+
+@-webkit-keyframes confetti1 {
+	0% {
+	}
+	50% {
+		-webkit-transform: translateX(3px) rotateX(90deg) rotateY(45deg);
+	}
+	100% {
+		-webkit-transform: rotateX(180deg) rotateY(45deg);
+	}
+}
+@-webkit-keyframes confetti2 {
+	0% {
+	}
+	50% {
+		-webkit-transform: translateX(-3px) rotateY(90deg) rotateX(45deg);
+	}
+	100% {
+		-webkit-transform:rotateY(180deg) rotateX(45deg);
+	}
+}
+</style>
+<title>confetti</title>
+</head>
+<body>
+</body>
+</html>

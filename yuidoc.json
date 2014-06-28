@@ -1,0 +1,7 @@
+{
+    "name": "jQuery confetti",
+    "description": "jQuery plugin to reproduce the confetti",
+    "options": {
+        "outdir": "yuidoc/"
+    }
+}
