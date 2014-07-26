@@ -104,22 +104,22 @@ $.fn.confetti = function (options) {
 	 * @param  {Number} intervalSpeed interval speed
 	 * @param  {Function} complate complate function
 	 */
-	function gravity($content,speedX,speedY,airResistanceNum,gravityNum,intervalSpeed,complate){
+	function gravity($confetti,speedX,speedY,airResistanceNum,gravityNum,intervalSpeed,complate){
 		var timer = setInterval(function() {
-			var leftPosition = $content.position().left,
-				topPosition = $content.position().top;
+			var leftPosition = $confetti.position().left,
+				topPosition = $confetti.position().top;
 
-		    	speedX *= airResistanceNum;
-		    	speedY = speedY * airResistanceNum + gravityNum;
+    	speedX *= airResistanceNum;
+    	speedY = speedY * airResistanceNum + gravityNum;
 
-			$content.css({
+			$confetti.css({
 				left: leftPosition + speedX + 'px',
 				top: topPosition + speedY + 'px'
 			});
 
 			if($('body').height() < topPosition + speedY) {
 				removeNum++;
-				$content.remove();
+				$confetti.remove();
 			};
 
 			if(removeNum === c.num) {
