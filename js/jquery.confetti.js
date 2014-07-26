@@ -10,6 +10,15 @@
  *
  * jQuery plugin to reproduce the confetti
  *
+ * x: {Number} offset().left + width() / 2
+ * y: {Number} offset().top + height() / 2
+ * num: {Number} Number of confetti you want to generate
+ * speedRange: {Number} range of initial velocity
+ * airResistanceNum:  {Number} airResistanceNum air resistance
+ * gravityNum: {Number} gravityNum gravity
+ * intervalSpeed: {Number} intervalSpeed interval speed
+ * complate: {Function} complate complate function
+ *
  *	@class confetti
  */
 
@@ -64,7 +73,7 @@ $.fn.confetti = function (options) {
 	 * @method exception
 	 * @param  {Number} airResistanceNum air resistance
 	 * @param  {Number} gravityNum gravity
-	 * @param  {Number} intervalSpeed intervalSpeed
+	 * @param  {Number} intervalSpeed interval speed
 	 * @param  {Function} complate complate function
 	 */
 	function exception(airResistanceNum,gravityNum,intervalSpeed,complate){
@@ -92,7 +101,7 @@ $.fn.confetti = function (options) {
 	 * @param  {Number} speedY initial velocity in the y-direction
 	 * @param  {Number} airResistanceNum air resistance
 	 * @param  {Number} gravityNum gravity
-	 * @param  {Number} intervalSpeed intervalSpeed
+	 * @param  {Number} intervalSpeed interval speed
 	 * @param  {Function} complate complate function
 	 */
 	function gravity($content,speedX,speedY,airResistanceNum,gravityNum,intervalSpeed,complate){
